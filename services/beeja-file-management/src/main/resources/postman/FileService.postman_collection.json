@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "34f56194-052b-4500-b68f-a34520571df1",
+		"name": "FileService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43003168"
+	},
+	"item": [
+		{
+			"name": "UploadFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/User/Pictures/Screenshots/Screenshot (838).png"
+						},
+						{
+							"key": "fileType",
+							"value": "personal",
+							"type": "text"
+						},
+						{
+							"key": "fileContent",
+							"value": "general",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "pan",
+							"type": "text"
+						},
+						{
+							"key": "entityId",
+							"value": "TAC002",
+							"type": "text"
+						},
+						{
+							"key": "entityType",
+							"value": "employee",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{port}}/files/v1/files",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetFilesByEmpId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{port}}/files/v1/files/{{employeeId}}",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"{{employeeId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DownloadFileById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{port}}/files/v1/files/download/{{fileId}}",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"download",
+						"{{fileId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFileById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{port}}/files/v1/files/{{fileId}}",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"{{fileId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateFileById",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/User/Pictures/Screenshots/Screenshot (832).png"
+						},
+						{
+							"key": "fileType",
+							"value": "personal",
+							"type": "text"
+						},
+						{
+							"key": "fileContent",
+							"value": "general",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "pan",
+							"type": "text"
+						},
+						{
+							"key": "entityId",
+							"value": "TAC002",
+							"type": "text"
+						},
+						{
+							"key": "entityType",
+							"value": "employee",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{port}}/files/v1/files/{{fileId}}",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"{{fileId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Files By EntityId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{port}}/files/v1/files/{{fileId}}?page=1&size=5",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"{{fileId}}"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Or UpdateFile",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{port}}/files/v1/files/dynamic",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"files",
+						"v1",
+						"files",
+						"dynamic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadBulkPaySlips",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "zipFile",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/app (1).zip"
+						},
+						{
+							"key": "month",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2023",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{port}}/finance/v1/payslips",
+					"host": [
+						"{{port}}"
+					],
+					"path": [
+						"finance",
+						"v1",
+						"payslips"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
