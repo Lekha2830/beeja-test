@@ -21,5 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install global license checker
+        run: npm install -g license-checker
+
       - name: Run license checker
-        run: npm run check-licenses
+        run: license-checker --failOn unknown
